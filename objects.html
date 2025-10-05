@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "John Doe",
+        age: "12",
+      };
+      console.log(person.name);
+      console.log(person.age);
+      person.name = "changed";
+      console.log(person.name);
+      person.newProperty = true;
+      console.log(person.newProperty);
+      console.log(typeof person.newProperty);
+
+      // bracket  notation
+      const person2 = {
+        name: "J",
+        "time-minute": 12,
+        rating: {
+          // nested objects
+          age: 11,
+        },
+        fun: function function1() {
+          console.log("trying function in object");
+        },
+      };
+      console.log(person2.name);
+      console.log(person2["name"]);
+      console.log(person2["time-minute"]);
+
+      console.log(person2.rating.age);
+      person2.fun();
+      console.log(person2.fun);
+
+      //Built-in objects are JSON and Local Storage
+      //JSON have less features than Javscript object like function cannot be declared in it.
+
+      // convert js object to JSON
+      // JSON.stringify(person2);
+      const jsonString = JSON.stringify(person2);
+      console.log(jsonString); //  funstion is not in this
+
+      //JSON to js object
+      console.log(JSON.parse(jsonString));
+
+      // 2. localStorage
+      // to save the value permanently
+      localStorage.setItem("message", jsonString);
+      let msg = localStorage.getItem("message");
+      console.log(msg);
+    </script>
+  </body>
+</html>
